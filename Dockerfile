@@ -4,8 +4,8 @@ FROM node:18-alpine AS builder
 # Set working directory
 WORKDIR /app
 
-# Install pnpm
-RUN npm install -g pnpm
+# Install pnpm and set registry
+RUN npm install -g pnpm && pnpm config set registry https://registry.npmmirror.com/
 
 # Copy package files
 COPY package.json pnpm-lock.yaml ./
@@ -25,8 +25,8 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Install pnpm
-RUN npm install -g pnpm
+# Install pnpm and set registry
+RUN npm install -g pnpm && pnpm config set registry https://registry.npmmirror.com/
 
 # Copy package files
 COPY package.json pnpm-lock.yaml ./
