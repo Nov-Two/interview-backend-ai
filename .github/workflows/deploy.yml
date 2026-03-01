@@ -22,6 +22,9 @@ jobs:
             # 进入项目目录 (请确保此目录与服务器实际目录一致)
             cd /home/interview-backend-ai
             
+            # 丢弃本地更改，避免 git pull 冲突
+            git checkout .
+            
             # 执行部署脚本
             chmod +x deploy.sh
             ./deploy.sh
