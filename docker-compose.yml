@@ -14,7 +14,7 @@ services:
       - DB_PASSWORD=root
       - DB_DATABASE=interview_ai
       - JWT_SECRET=your_jwt_secret_key
-      - DEEPSEEK_API_KEY=sk-8d69733475874404975e548232230113
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
       - DEEPSEEK_API_URL=https://api.deepseek.com
     volumes:
       - ./uploads:/app/uploads
